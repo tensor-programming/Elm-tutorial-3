@@ -3,22 +3,24 @@ module Main exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Html.App as App
+
 
 
 main =
-    App.beginnerProgram
+    Html.beginnerProgram
         { model = model
         , update = update
         , view = view
         }
+
+--model
+
 
 
 type alias Model =
     { todo : String
     , todos : List String
     }
-
 
 model : Model
 model =
@@ -28,7 +30,9 @@ model =
 
 
 
+
 --update
+
 
 
 type Msg
@@ -98,7 +102,7 @@ view model =
     div [ class "jumbotron" ]
         [ stylesheet
         , input
-            [ type' "text"
+            [ type_ "text"
             , onInput UpdateTodo
             , class "form-control"
             , value model.todo
